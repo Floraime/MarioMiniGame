@@ -6,6 +6,8 @@ public class StartSequenceController : MonoBehaviour
     public GameObject startPanel;
     public GameObject startText;
 
+    public bool gameStarted = false;
+
     private bool sequenceStarted = false;
 
     void Start()
@@ -31,5 +33,7 @@ public class StartSequenceController : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         startText.SetActive(false);
+
+        gameStarted = true;
     }
 }
