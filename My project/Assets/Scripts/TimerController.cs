@@ -7,6 +7,13 @@ public class TimerController : MonoBehaviour
     public float timeRemaining = 30f;
     public StartSequenceController startSequence;
 
+    public GameObject finishText;
+
+    public Animator[] characterAnimators;
+    public MonoBehaviour[] movingObjects;
+    public AudioSource backgroundMusic;
+    public AudioSource[] boxSounds;
+
     private bool finished = false;
 
     void Update()
@@ -18,6 +25,10 @@ public class TimerController : MonoBehaviour
         if (timeRemaining > 0)
         {
             timeRemaining -= Time.deltaTime;
+
+            if (timeRemaining < 0)
+                timeRemaining = 0;
+
             timerText.text = Mathf.Ceil(timeRemaining).ToString();
         }
         else
@@ -25,6 +36,41 @@ public class TimerController : MonoBehaviour
             timeRemaining = 0;
             timerText.text = "0";
             finished = true;
+
+            startSequence.gameStarted = false;
+
+            // Stop character animations
+            foreach (Animator anim in characterAnimators)
+            {
+                if (anim != null)
+                    anim.enabled = false;
+            }
+
+            // Stop moving objects
+            foreach (MonoBehaviour script in movingObjects)
+            {
+                if (script != null)
+                    script.enabled = false;
+            }
+
+            // Stop background music
+            if (backgroundMusic != null)
+            {
+                backgroundMusic.Stop();
+            }
+
+            // Stop box sounds
+            foreach (AudioSource audio in boxSounds)
+            {
+                if (audio != null)
+                    audio.Stop();
+            }
+
+            // Show FINISH text
+            if (finishText != null)
+            {
+                finishText.SetActive(true);
+            }
         }
     }
 }
