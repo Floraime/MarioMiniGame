@@ -9,6 +9,7 @@ public class StartSequenceController : MonoBehaviour
     public Animator[] characterAnimators;
     public MonoBehaviour[] movingObjects;
     public AudioSource backgroundMusic;
+    public AudioSource startSound;
 
     public AudioSource[] boxSounds;
 
@@ -70,12 +71,20 @@ public class StartSequenceController : MonoBehaviour
         // Hide instructions and show "START" text
         startPanel.SetActive(false);
         startText.SetActive(true);
+        if (startSound != null)
+        {
+    startSound.Play();
+        }
 
         // Wait while game is paused
         yield return new WaitForSecondsRealtime(2f);
 
         // Hide "START" text
         startText.SetActive(false);
+        if (startSound != null)
+        {
+    startSound.Stop();
+        }
 
         // Enable character animations
         foreach (Animator anim in characterAnimators)
