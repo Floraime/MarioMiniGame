@@ -2075,6 +2075,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &772701720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772701713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b678c0e22bd26f41b480e1d0ea5729d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AutoPlayerController
+  startSequence: {fileID: 1054384813}
+  moveSpeed: 2.3
+  minX: 6.3
+  maxX: 9
+  changeDirectionTime: 2
 --- !u!1 &780740691
 GameObject:
   m_ObjectHideFlags: 0
@@ -4825,7 +4842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86e9b2833d2c69d44bed55f4503e5257, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.31
+      value: 6.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86e9b2833d2c69d44bed55f4503e5257, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4833,7 +4850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86e9b2833d2c69d44bed55f4503e5257, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.72
+      value: -9.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86e9b2833d2c69d44bed55f4503e5257, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4979,6 +4996,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 86e9b2833d2c69d44bed55f4503e5257, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2004089097}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 86e9b2833d2c69d44bed55f4503e5257, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2004089101}
   m_SourcePrefab: {fileID: 100100000, guid: 86e9b2833d2c69d44bed55f4503e5257, type: 3}
 --- !u!1001 &1783533918
 PrefabInstance:
@@ -5476,6 +5496,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 86e9b2833d2c69d44bed55f4503e5257, type: 3}
       insertIndex: -1
       addedObject: {fileID: 772701716}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 86e9b2833d2c69d44bed55f4503e5257, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 772701720}
   m_SourcePrefab: {fileID: 100100000, guid: 86e9b2833d2c69d44bed55f4503e5257, type: 3}
 --- !u!1001 &1858747922
 PrefabInstance:
@@ -5816,6 +5839,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5, y: 6, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2004089101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004089094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b678c0e22bd26f41b480e1d0ea5729d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AutoPlayerController
+  startSequence: {fileID: 1054384813}
+  moveSpeed: 2
+  minX: 2.5
+  maxX: 5
+  changeDirectionTime: 2
 --- !u!1001 &2047569191
 PrefabInstance:
   m_ObjectHideFlags: 0
