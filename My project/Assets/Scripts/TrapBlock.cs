@@ -47,4 +47,12 @@ public class TrapBlock : MonoBehaviour
             goingDown = false; // 
         }
     }
+    void OnTriggerEnter(Collider other)
+{
+    if (other.CompareTag("Player"))
+    {
+        // Hide the player when hit by the box
+        other.gameObject.SetActive(false);
+    }
+}
 }
