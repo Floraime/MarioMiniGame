@@ -13,6 +13,7 @@ public class TimerController : MonoBehaviour
     public MonoBehaviour[] movingObjects;
     public AudioSource backgroundMusic;
     public AudioSource[] boxSounds;
+    public AudioSource finishSound;
 
     private bool finished = false;
 
@@ -70,6 +71,11 @@ public class TimerController : MonoBehaviour
             if (finishText != null)
             {
                 finishText.SetActive(true);
+            }
+            // Play finish sound
+            if (finishSound != null)
+            {
+                finishSound.Play();
             }
         }
     }
