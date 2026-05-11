@@ -340,6 +340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: _Box
       objectReference: {fileID: 0}
+    - target: {fileID: 7019193749790594052, guid: 23adc83ec0d82fe4e9b1aaf8d0d20af3, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 7019193749790594053, guid: 23adc83ec0d82fe4e9b1aaf8d0d20af3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.42
@@ -1322,6 +1326,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: _Box (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7019193749790594052, guid: 23adc83ec0d82fe4e9b1aaf8d0d20af3, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 7019193749790594053, guid: 23adc83ec0d82fe4e9b1aaf8d0d20af3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.76
@@ -2092,6 +2100,8 @@ MonoBehaviour:
   minX: 6.3
   maxX: 9
   changeDirectionTime: 2
+  detectionDistance: 6
+  detectionRadius: 2
 --- !u!1 &780740691
 GameObject:
   m_ObjectHideFlags: 0
@@ -2986,6 +2996,10 @@ PrefabInstance:
     - target: {fileID: 7019193749790594052, guid: 23adc83ec0d82fe4e9b1aaf8d0d20af3, type: 3}
       propertyPath: m_Name
       value: _Box (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019193749790594052, guid: 23adc83ec0d82fe4e9b1aaf8d0d20af3, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 7019193749790594053, guid: 23adc83ec0d82fe4e9b1aaf8d0d20af3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3982,6 +3996,8 @@ MonoBehaviour:
   moveSpeed: 3
   minX: 2.5
   maxX: 9
+  jumpHeight: 1.5
+  jumpSpeed: 5
 --- !u!1 &1428586892
 GameObject:
   m_ObjectHideFlags: 0
@@ -5955,6 +5971,8 @@ MonoBehaviour:
   minX: 2.5
   maxX: 5
   changeDirectionTime: 2
+  detectionDistance: 6
+  detectionRadius: 2
 --- !u!1001 &2047569191
 PrefabInstance:
   m_ObjectHideFlags: 0
