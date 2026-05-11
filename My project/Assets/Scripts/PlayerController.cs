@@ -8,11 +8,20 @@ public class PlayerController : MonoBehaviour
     public float minX = 2f;
     public float maxX = 6f;
 
+    public float jumpHeight = 1.5f;
+    public float jumpSpeed = 5f;
+
     private Animator animator;
+
+    private Vector3 startPosition;
+    private bool isJumping = false;
+    private float jumpProgress = 0f;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+
+        startPosition = transform.position;
 
         // Face forward at the start
         transform.rotation = Quaternion.Euler(0f, 180f, 0f);
@@ -46,27 +55,58 @@ public class PlayerController : MonoBehaviour
         // Character rotation
         if (moveDirection > 0)
         {
-            // Face right
             transform.rotation = Quaternion.Euler(0f, 90f, 0f);
         }
         else if (moveDirection < 0)
         {
-            // Face left
             transform.rotation = Quaternion.Euler(0f, -90f, 0f);
         }
         else
         {
-            // Idle state facing forward
             transform.rotation = Quaternion.Euler(0f, 180f, 0f);
         }
 
         // Character movement
         Vector3 newPosition = transform.position;
         newPosition.x += moveDirection * moveSpeed * Time.deltaTime;
-
-        // Limit movement range
         newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
-
         transform.position = newPosition;
+
+        // Jump
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        {
+            isJumping = true;
+            jumpProgress = 0f;
+
+            if (animator != null)
+            {
+                animator.SetBool("IsJumping", true);
+            }
+        }
+
+        if (isJumping)
+        {
+            jumpProgress += Time.deltaTime * jumpSpeed;
+
+            float jumpY = Mathf.Sin(jumpProgress) * jumpHeight;
+
+            Vector3 jumpPosition = transform.position;
+            jumpPosition.y = startPosition.y + jumpY;
+            transform.position = jumpPosition;
+
+            if (jumpProgress >= Mathf.PI)
+            {
+                isJumping = false;
+
+                Vector3 finalPosition = transform.position;
+                finalPosition.y = startPosition.y;
+                transform.position = finalPosition;
+
+                if (animator != null)
+                {
+                    animator.SetBool("IsJumping", false);
+                }
+            }
+        }
     }
 }
