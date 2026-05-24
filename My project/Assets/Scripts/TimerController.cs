@@ -8,6 +8,7 @@ public class TimerController : MonoBehaviour
     public StartSequenceController startSequence;
 
     public GameObject finishText;
+    public FinishLeaderboardController finishLeaderboardController;
 
     public Animator[] characterAnimators;
     public MonoBehaviour[] movingObjects;
@@ -67,11 +68,16 @@ public class TimerController : MonoBehaviour
                     audio.Stop();
             }
 
-            // Show FINISH text
-            if (finishText != null)
+            // Show finish and leaderboard sequence
+            if (finishLeaderboardController != null)
+            {
+                finishLeaderboardController.ShowFinalSequence();
+            }
+            else if (finishText != null)
             {
                 finishText.SetActive(true);
             }
+
             // Play finish sound
             if (finishSound != null)
             {
